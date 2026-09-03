@@ -16,7 +16,8 @@ export default defineComponent({
 
     methods: {
         agregar(usuario: string): void {
-            this.usuarios.push({id: this.usuarios.length - 1, name: usuario})
+            if (!usuario) return
+            this.usuarios.push({ id: this.usuarios.length - 1, name: usuario })
             this.nuevo_usuario = ""
         },
         eliminar(id: number) {
